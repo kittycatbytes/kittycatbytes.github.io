@@ -1,5 +1,5 @@
-# netflixapp
-Implement a simple Netflix-like user interface
+# newsapp
+Implement a simple News-like user interface
 
 # Get started
 

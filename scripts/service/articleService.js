@@ -1,5 +1,5 @@
 /* Get Articles Metadata */
-function getArticlesMetadata() {
+function getArticleMetadata() {
     //return fetch('forceerror')
     return fetch('data.json')
         .then(response => {
