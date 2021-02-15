@@ -7,6 +7,7 @@ var NewsApp = {
         this.selector.innerHTML = template;
     },
     currentPage: null,
+    currentarticle: 0,
     currentAction: 0,
     services: {
         articleMetadata: null
