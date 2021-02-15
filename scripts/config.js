@@ -7,7 +7,7 @@ var NewsApp = {
         this.selector.innerHTML = template;
     },
     currentPage: null,
-    currentarticle: 0,
+    currentarticle: null,
     currentAction: 0,
     services: {
         articleMetadata: null
@@ -17,6 +17,7 @@ var NewsApp = {
 function initApp() {
     getArticleMetadata().then(articleData => {
         NewsApp.services.articleMetadata = articleData;
+        NewsApp.currentarticle = articleData[0];
         setPage('Browse', getBrowseTemplate(articleData));
     });
 }
