@@ -7,6 +7,7 @@ const initTemplate = `<div id="onloadPage" class="news-page"><img src="../assets
 function getBrowseTemplate(articles) {
     articles = articles || NewsApp.services.articleMetadata;
     let i = NewsApp.currentarticle;
+    console.log("current is: " + i);
     let template = '<div id="browsePage" class="news-page">';
     template += '<div id="banner"><div id="bannerLeft">'
     template += `<div id="articleTitle">${articleTitle(articles[i])}</div>`;
@@ -43,6 +44,7 @@ function displayArt(currentItem) {
 }
 
 function articleTitle(currentItem) {
+    console.log("currentItem is: " + JSON.stringify(currentItem));
     return `<div class="article-title">${currentItem.title}</div>
             <div class="article-details">${currentItem.blurb}</div>`;
 }
