@@ -44,8 +44,7 @@ function displayArt(currentItem) {
 
 function articleTitle(currentItem) {
     return `<div class="article-title">${currentItem.title}</div>
-            <div class="article-details">${currentItem.releaseYear}</div>
-            <div class="article-details">${currentItem.rating}</div>`;
+            <div class="article-details">${currentItem.blurb}</div>`;
 }
 
 function myList(articles, current) {
