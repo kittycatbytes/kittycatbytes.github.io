@@ -18,6 +18,13 @@ function initApp() {
     getArticleMetadata().then(articleData => {
         console.log("article data: " + JSON.stringify(articleData));
         NewsApp.services.articleMetadata = articleData;
-        setPage('Browse', getBrowseTemplate(articleData));
+        setPage('BizzFind Search Results', getBrowseTemplate(articleData));
+        return articleData;
+    }).then(articleData => {
+        let article = articleData[7];
+        console.log("article is: " + JSON.stringify(articleData[7]));
+        document.querySelectorAll(`.article-title`).forEach(item => item.addEventListener("click", function() {
+            setPage(article.title, getDetailsTemplate(article));
+          }));
     });
 }
