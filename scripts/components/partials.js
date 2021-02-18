@@ -18,10 +18,13 @@ function getBrowseTemplate(articles) {
 /* Details Page */
 function getDetailsTemplate(article) {
     let template = '<div id="detailsPage" class="news-page">';
-    template += `<div id="articleTitle">${article.title}}</div>`;
-    template += `<div id="articleBody"> ${getArticleContent()}`;
+    template += `<div id="articleTitle">${getArticleContent().title}</div>`;
+    template += `<div id="articleBody"> <p>${getArticleContent().content[0]}</p>`;
     template += `<div id="articleImg1"><img src="./assets/img/displayart/P1880198_k_sm.jpg" /></div>`;
-    template += `<div id="articleImg2"><img src="./assets/img/displayart/P1880198_k_sm.jpg" /></div>`;
+    template += `<div class="blurb">${getArticleContent().blurbs[0]}</div>`
+    template += `<p>${getArticleContent().content[1]}</p><div class="blurb">${getArticleContent().blurbs[1]}</div>`
+    template += `<div id="articleImg2"><img src="./assets/img/displayart/P1880257_k_sm.jpg" /></div>`;
+    template += `<p>${getArticleContent().content[2]}</p>`
     template += '</div>';
     template += '</div>';
     return template;
@@ -46,23 +49,26 @@ function myList(articles) {
 }
 
 function getArticleContent () {
-    return `Aliquam sed tincidunt ligula. Nam cursus fermentum lobortis. Aenean vel cursus leo. Proin mattis tristique purus, ac tristique dolor volutpat vehicula. Vestibulum nec diam vitae ante porttitor ultricies. Integer tempus sodales dapibus. Integer blandit enim id porta faucibus. In sodales nisl ac felis rhoncus, nec feugiat odio porttitor. Cras quis enim sollicitudin velit vulputate ultricies. Nulla facilisi. Fusce dictum justo non metus rhoncus interdum. Donec convallis porta augue, sed consequat mi lacinia vitae. Proin commodo augue eu mi eleifend, ut volutpat nulla euismod. Pellentesque elementum ex arcu, dapibus mollis ante malesuada eget. Suspendisse quis blandit lacus.
+    return { 
+        title: "The Disturbing Story of Daria Mayfair, Ghost Bride of Hell House",
+        blurbs: [
+            "'Anastasia Blackwood, Daria's rumored lover, stabbed Daria repeatedly as she stood on her wedding alter. Anastasia was immediately committed to nearby Sheppard Pratt institute, and still resides there to this day.'",
+            "'It is rumored that Anastasia devolved into an obsessive madness. County records show that Daria filed a restraining order against Anastasia, though photographic evidence would seem to support a romantic relationship between the two.'"
+        ],
+        content: [
+        `Jan 21, 2019 — Today marks the anniversary of the horrifying event that took place in St. Mary's College Church, 65 years ago. It is believed that her ghost still haunts the ruins in Patapsco Valley State Park in Illchester, Maryland. Since the 
+        College was demolished in 1997, locals and visitors alike have reported seeing her apparition walking through the wooded area that surrounds the ruins. We interviewed the local Ellicott City historian, Barnaby Holmes, to get the full story behind her tragic tale.
+        "The story is not for the faint of heart. The county records, crime reports, and preserved photographs depict a complicated story, that leaves us with more questions than answers," says Holmes. In the archives of the Ellicott City Historic Institute, 
+        we reviewed each piece of this disturbing puzzle in hopes of unraveling the mid-century mystery behind the "Ghost Bride of Hell House".`,
+        `Investigative reports show that Anastasia Blackwood, Daria's rumored jealous lover, stabbed Daria repeatedly on her wedding day, as she stood at the alter. Anastasia was immediately committed to nearby psychiatric hospital, Sheppard Pratt institute, 
+        and still resides there to this day. Reports also indicate that Daria Mayfair filed a restraining order against Anastasia on account of stalking and threats of physical violence. However, the photographs preserved from the time, paint a different picture.
+        "There was clearly a romance between the two. These photographs show their intimacy and relationship, the handwritten dates on these old photographs span nearly five years," Holmes reports. It is not clear what sparked the turn of events in their 
+        romance. It is rumored by locals that Daria drove Anastasia to madness after suddenly cutting her off, and pursuing her brother, Gregory Blackwood. 90 year old local resident, Layla Drummond, has a theory.`,
+        `"[Ellicott City] was a small town back then. Everybody knew everybody's business. I remember seeing them around town. They didn't try to hide their relationship. It was very controversial at the time, two women together like that. Then all of a 
+        sudden, I started seeing them arguing around town. I'm not sure what happened, but they were fighting over something. I think their families found out. Either that or Anastasia did something that Daria didn't like. I'm not sure what was more 
+        controversial, Daria and Anastasia flaunting themselves around, or that Daria tried to marry Anastasia's brother not but three months after they started fighting. Obviously, the murder was all over the news. It was all anybody talked about for some time," Drummond explains.
+        It is said that a ghost has unfinished business, and must fulfill something before they can pass onto the other side. If this is true, what business will Daria fulfill to pass on, or will she forever haunt the Hell House ruins?`
+    ]
 
-    Donec mattis eu sapien et tincidunt. Vestibulum auctor non nisi vel venenatis. Vestibulum egestas varius ante vitae consequat. Phasellus facilisis commodo posuere. Maecenas mauris enim, suscipit eget dolor quis, vehicula egestas odio. Aliquam ultricies orci at pharetra venenatis. Sed nisi elit, placerat non erat ac, posuere lacinia est. Etiam vitae magna commodo, vehicula enim non, commodo lacus. Curabitur sodales dignissim sem, id blandit eros blandit et. Phasellus interdum finibus blandit. Fusce nec volutpat dui, ac lacinia orci. Phasellus in velit fermentum nulla placerat dignissim. Phasellus commodo, metus quis rhoncus eleifend, odio quam consectetur dui, in interdum mi turpis eget dui.
-    
-    Aliquam suscipit purus vel lorem feugiat mollis. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Nam scelerisque tempus nisl id vehicula. Nam urna nisl, tempus nec felis eu, semper porttitor augue. Nam semper in sapien ac ullamcorper. Quisque laoreet metus id lectus iaculis, nec lobortis lectus volutpat. Etiam ornare sed augue iaculis tempus. Nulla blandit ornare ligula id congue. Sed quis orci diam. Sed a sagittis massa. Nulla posuere nisi nec dui venenatis efficitur. Nulla facilisi.
-    
-    Nunc id elit lectus. Phasellus ornare auctor augue. Nulla pellentesque ornare enim vel rhoncus. Morbi feugiat urna vel odio luctus, nec feugiat purus egestas. Nam at finibus leo. Vestibulum blandit, purus sit amet semper convallis, neque sem lacinia felis, vulputate pulvinar ipsum augue semper dolor. Sed tristique enim at turpis dictum, ut suscipit magna dictum. Donec id quam feugiat, pharetra libero non, consectetur ante. Mauris pulvinar, mauris in iaculis scelerisque, enim orci bibendum turpis, ut interdum sem arcu at tortor. Morbi feugiat malesuada quam, ut ullamcorper sem dignissim vitae. Morbi id libero eget urna faucibus fringilla quis at neque.
-    
-    Morbi commodo sodales tempor. Nulla rutrum mattis mauris, dignissim placerat sem lacinia ac. Phasellus ut nulla at libero molestie facilisis sed nec dui. Vestibulum ligula arcu, pulvinar at porta at, venenatis id purus. Maecenas sed volutpat augue. Vestibulum in fringilla elit, vel blandit quam. Pellentesque molestie lacus mattis vehicula dapibus. Nulla varius sed lorem ultricies semper.
-    
-    Nunc nec metus ut nisl auctor consequat. Quisque eu elit eu enim imperdiet facilisis. Phasellus aliquet, libero ac varius finibus, diam purus bibendum purus, non efficitur eros mi sed tortor. Sed accumsan purus non leo ullamcorper, sit amet lacinia dui sodales. Donec vehicula consequat ipsum vitae malesuada. Nam vestibulum urna massa, sit amet sollicitudin dolor interdum sed. Praesent mi eros, facilisis sed purus et, lacinia eleifend felis. Nam at sapien vel neque iaculis ullamcorper quis id justo. Nullam molestie ipsum lobortis lacus lacinia accumsan. Nulla convallis lacus sit amet massa aliquam malesuada.
-    
-    Morbi varius diam sed leo pulvinar porttitor. Praesent finibus imperdiet massa, a aliquet dolor egestas eleifend. Pellentesque accumsan purus vel porttitor feugiat. In scelerisque porttitor nisl posuere suscipit. Quisque quis tempus risus. In posuere dapibus arcu vitae varius. Curabitur consectetur ipsum lacus, eu varius nisl tempus in. Sed malesuada pretium diam quis vestibulum.
-    
-    Fusce augue neque, egestas sit amet vestibulum sit amet, vulputate eget dui. Nunc facilisis tincidunt dui fringilla ornare. Ut iaculis vel massa id egestas. Mauris tristique nisl augue, eu tincidunt mi vehicula ac. Duis eu arcu pulvinar, faucibus dui eget, auctor massa. Sed condimentum elit arcu, id consectetur leo ornare eget. Curabitur dapibus diam non dignissim bibendum.
-    
-    Pellentesque blandit nunc ipsum. Mauris sed varius est. Nunc laoreet nisl ac convallis euismod. Pellentesque tempor vehicula egestas. Morbi sit amet enim ligula. Suspendisse vitae feugiat erat, ut accumsan risus. Nunc interdum mauris vel nisl aliquet maximus. Ut ut turpis laoreet, rhoncus arcu nec, viverra urna. Ut lectus enim, iaculis vel ultrices ac, scelerisque eu dolor. Vestibulum et iaculis arcu, ac rhoncus urna. Sed facilisis id est sit amet vestibulum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-    
-    Maecenas ornare turpis mauris, et tempor massa lacinia vel. Aenean pulvinar libero pellentesque, volutpat sem mattis, hendrerit nisl. Proin scelerisque leo velit, vitae tempus leo viverra vel. Phasellus gravida dignissim ipsum, a condimentum tortor ultrices nec. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam vestibulum magna mollis magna tincidunt sodales. Nulla egestas varius mi vel rutrum. Praesent tempor luctus nibh, vel feugiat lorem convallis sed. Cras a vestibulum velit. Phasellus sollicitudin velit mi, sed dictum enim mollis at. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Ut maximus dui vitae lacus euismod, eget placerat arcu tempor. Donec a augue imperdiet, malesuada mauris luctus, mattis nulla. Phasellus in ligula eget magna hendrerit dictum. Nulla dapibus sollicitudin leo, sed lacinia erat tincidunt eget.`;
+    }
 }

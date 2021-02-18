@@ -20,7 +20,7 @@ html, body, #main  {
 .news-page {
     min-height: 775px;
 }
-#browsePage, #detailsPage
+#browsePage
 {
     background: #fff;
     color: #000;
@@ -29,10 +29,6 @@ html, body, #main  {
 }
 #browsePage {
     flex-direction: column;
-}
-#detailsPage {
-    flex-direction: row;
-
 }
 #searchArea {
     justify-content: space-between;
@@ -97,4 +93,42 @@ html, body, #main  {
 .article-title {
     font-size: 24px;
     padding: 0px 0px 10px;
+}
+
+#detailsPage {
+    background: #fff;
+    color: #000;
+    height: 100vh;
+    max-width: 900px;
+}
+#articleTitle {
+    margin: 50px 0 30px;
+    font-size: 30px;
+}
+#articleBody {
+    line-height: 2em;
+    text-align: justify;
+    padding-bottom: 150px;
+}
+#articleImg1 img, #articleImg2 img {
+    max-width: 100%;
+    border-radius: 3px;
+}
+#articleImg1, #articleImg2 {
+    width: 350px;
+}
+#articleImg1 {
+    float: right;
+    margin: 30px 0 30px 50px;
+}
+
+#articleImg2 {
+    float: left;
+    margin: 30px 50px 30px 0;
+}
+.blurb {
+    font-size: 1.3em;
+    padding: 30px;
+    font-style: italic;
+    text-align: left;
 }
